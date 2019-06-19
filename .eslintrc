@@ -1,0 +1,8 @@
+{
+  "extends": [
+    "plugin:cypress-dev/general"
+  ],
+  "parserOptions": {"sourceType": "module", "ecmaVersion": 2018},
+  "env": {"node": true},
+  "rules": {"prefer-rest-params": "off"}
+}

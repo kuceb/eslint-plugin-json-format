@@ -1,0 +1,30 @@
+{
+  "name": "eslint-plugin-json-format",
+  "version": "0.0.0",
+  "description": "format josn",
+  "keywords": [
+    "eslint",
+    "eslintplugin",
+    "eslint-plugin"
+  ],
+  "author": "bkucera",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "mocha tests --recursive"
+  },
+  "dependencies": {
+    "requireindex": "~1.1.0"
+  },
+  "devDependencies": {
+    "debug": "^4.1.1",
+    "eslint": "^5.16.0",
+    "eslint-plugin-cypress-dev": "^3.0.0",
+    "jest": "^24.8.0",
+    "jest-cli": "^24.8.0",
+    "mocha": "^3.1.2"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "license": "ISC"
+}

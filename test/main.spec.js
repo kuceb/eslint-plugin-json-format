@@ -54,6 +54,14 @@ it('lint bad json', async () => {
   expect(result.output).toBe(await getFormatted(filename))
 })
 
+it('lint bad json no fix', async () => {
+  const filename = './fixtures/demo.json'
+  const result = execute(filename, {
+  })
+
+  expect(result[0]).toHaveProperty('severity', 2)
+})
+
 it('lint invalid json', async () => {
   const filename = './fixtures/demo.invalid.json'
   const result = execute(filename, {
@@ -191,6 +199,18 @@ it('lint bad js', () => {
 
 // const one = 'foo'
 `)
+})
+
+it('lint bad js no fix', () => {
+  const res = execute('./fixtures/jsdemo.js', {
+    rules: {
+      'no-multiple-empty-lines': 'error',
+      'quotes': ['error', 'single'],
+
+    },
+  })
+
+  expect(res[0]).toHaveProperty('severity', 2)
 })
 
 it('lint invalid js', () => {

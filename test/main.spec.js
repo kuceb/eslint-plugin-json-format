@@ -60,6 +60,7 @@ it('lint bad json no fix', async () => {
   })
 
   expect(result[0]).toHaveProperty('severity', 2)
+  expect(result[0]).toHaveProperty('message', 'Format Error: expected \"\\n\" ')
 })
 
 it('lint invalid json', async () => {

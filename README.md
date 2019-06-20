@@ -1,5 +1,7 @@
 # @cypress/eslint-plugin-json
 
+[![CircleCI](https://circleci.com/gh/cypress-io/eslint-plugin-json.svg?style=svg)](https://circleci.com/gh/cypress-io/eslint-plugin-json)
+
 Lint and autofix your `json` with `eslint`
 
 ## Features

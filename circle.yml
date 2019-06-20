@@ -5,7 +5,7 @@ workflows:
   build:
     jobs:
       - cypress/install:
-          executor: cypress/base-12
+          executor: cypress/base-10
           post-steps:
             - run: npm test
             - run: npm run semantic-release

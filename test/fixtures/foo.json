@@ -1,0 +1,47 @@
+
+{
+  "column": 1,
+  "endColumn": 1,
+  "endLine": 7,
+  "fix": {
+      "range": [
+          0,
+          4
+      ],
+      "text": ""
+  },
+  "line": 1,
+  "message": "Too many blank lines at the beginning of file. Max of 2 allowed.",
+  "nodeType": "Program",
+  "ruleId": "no-multiple-empty-lines",
+  "severity": 2
+}
+
+{
+  "errorCount": 1,
+  "filePath": "/home/owner/dev/misc/eslint-plugin-json-format/test/fixtures/jsdemo.invalid.js",
+  "fixableErrorCount": 0,
+  "fixableWarningCount": 0,
+  "messages": [
+      {
+          "column": 1,
+          "fatal": true,
+          "line": 1,
+          "message": "Parsing error: Unexpected token >>",
+          "ruleId": null,
+          "severity": 2
+      }
+  ],
+  "source": ">>",
+  "warningCount": 0
+}
+
+
+{ 
+  ruleId: null,
+  fatal: true,
+  severity: 2,
+  message: 'Parsing error: Unexpected token >>',
+  line: 1,
+  column: 1
+ }

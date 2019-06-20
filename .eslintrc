@@ -2,7 +2,16 @@
   "extends": [
     "plugin:cypress-dev/general"
   ],
+  "settings": {
+    "json/sort-package-json": false
+  },
   "parserOptions": {"sourceType": "module", "ecmaVersion": 2018},
   "env": {"node": true},
-  "rules": {"prefer-rest-params": "off"}
+  "rules": {"prefer-rest-params": "off",
+    "no-multiple-empty-lines": ["error", {"max": 1}]
+  }
 }
+
+
+
+

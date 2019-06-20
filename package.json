@@ -1,5 +1,5 @@
 {
-  "name": "eslint-plugin-json-format",
+  "name": "@cypress/eslint-plugin-json",
   "version": "0.0.0",
   "description": "format josn",
   "keywords": [
@@ -10,21 +10,29 @@
   "author": "bkucera",
   "main": "lib/index.js",
   "scripts": {
-    "test": "mocha tests --recursive"
+    "test": "jest"
   },
   "dependencies": {
-    "requireindex": "~1.1.0"
+    "@aitodotai/json-stringify-pretty-compact": "^1.3.0",
+    "diff": "^4.0.1",
+    "line-column": "^1.0.2",
+    "lodash": "^4.17.11",
+    "sort-package-json": "^1.22.1"
   },
   "devDependencies": {
+    "eslint-plugin-cypress-dev": "^3.0.0",
+    "@types/fs-extra": "^7.0.0",
+    "@types/jest": "^24.0.15",
     "debug": "^4.1.1",
     "eslint": "^5.16.0",
-    "eslint-plugin-cypress-dev": "^3.0.0",
+    "fs-extra": "^8.0.1",
     "jest": "^24.8.0",
     "jest-cli": "^24.8.0",
-    "mocha": "^3.1.2"
+    "mocha": "^3.1.2",
+    "parse-json": "^4.0.0"
   },
   "engines": {
     "node": ">=0.10.0"
   },
-  "license": "ISC"
+  "license": "MIT"
 }

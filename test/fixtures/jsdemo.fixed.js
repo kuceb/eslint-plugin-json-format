@@ -1,0 +1,4 @@
+'foo'
+
+
+// const one = 'foo'

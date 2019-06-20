@@ -1,0 +1,12 @@
+{
+    "plugins": [
+    "json-format"
+  ],
+  "extends":[
+      "plugin:cypress-dev/general"    
+  ]
+}
+
+
+
+

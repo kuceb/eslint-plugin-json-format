@@ -61,8 +61,8 @@ it('lint invalid json', async () => {
   })
 
   expect(result).toEqual({
+    filePath: path.join(__dirname, filename),
     errorCount: 1,
-    filePath: '/home/owner/dev/misc/eslint-plugin-json-format/test/fixtures/demo.invalid.json',
     fixableErrorCount: 0, 'fixableWarningCount': 0,
     messages: [{
       column: '3',
@@ -113,13 +113,14 @@ it('lint .eslintrc', async () => {
 })
 
 it('lint good json', () => {
-  const result = execute('./fixtures/demo.fixed.json', {
+  const filename = './fixtures/demo.fixed.json'
+  const result = execute(filename, {
     fix: true,
   })
 
   expect(result).toEqual({
+    filePath: path.join(__dirname, filename),
     'errorCount': 0,
-    'filePath': '/home/owner/dev/misc/eslint-plugin-json-format/test/fixtures/demo.fixed.json',
     'fixableErrorCount': 0,
     'fixableWarningCount': 0,
     'messages': [],
@@ -129,6 +130,18 @@ it('lint good json', () => {
 
 it('lint + sort package.json', async () => {
   const filename = './fixtures/__package.json'
+  const result = execute(filename, {
+    fix: true,
+  })
+
+  // console.log(result.output)
+
+  expect(result.output).toBe(`${formatJSON(sortPkgJSON(parseJSON(await getFormatted(filename))))}\n`)
+
+})
+
+it('lint + sort big package.json', async () => {
+  const filename = './fixtures/big/__package.json'
   const result = execute(filename, {
     fix: true,
   })
@@ -183,7 +196,8 @@ it('lint bad js', () => {
 })
 
 it('lint invalid js', () => {
-  const res = execute('./fixtures/jsdemo.invalid.js', {
+  const filename = './fixtures/jsdemo.invalid.js'
+  const res = execute(filename, {
     rules: {
       'no-multiple-empty-lines': 'error',
       'quotes': ['error', 'single'],
@@ -193,8 +207,8 @@ it('lint invalid js', () => {
   })
 
   expect(res).toEqual({
+    filePath: path.join(__dirname, filename),
     'errorCount': 1,
-    'filePath': '/home/owner/dev/misc/eslint-plugin-json-format/test/fixtures/jsdemo.invalid.js',
     'fixableErrorCount': 0,
     'fixableWarningCount': 0,
     'messages': [
@@ -215,7 +229,8 @@ it('lint invalid js', () => {
 })
 
 it('lint good js', () => {
-  const res = execute('./fixtures/jsdemo.fixed.js', {
+  const filename = './fixtures/jsdemo.fixed.js'
+  const res = execute(filename, {
     rules: {
       'no-multiple-empty-lines': 'error',
       'quotes': ['error', 'single'],
@@ -225,8 +240,8 @@ it('lint good js', () => {
   })
 
   expect(res).toEqual({
+    filePath: path.join(__dirname, filename),
     'errorCount': 0,
-    'filePath': '/home/owner/dev/misc/eslint-plugin-json-format/test/fixtures/jsdemo.fixed.js',
     'fixableErrorCount': 0,
     'fixableWarningCount': 0,
     'messages': [],

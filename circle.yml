@@ -1,12 +1,26 @@
 version: 2.1
-orbs:
-  cypress: cypress-io/cypress@1
+jobs:
+  test:
+    docker:
+    - image: cypress/base:10
+    steps:
+    - checkout
+    - restore_cache:
+        keys:
+        - cache-{{ arch }}-{{ .Branch }}-{{ checksum "package.json" }}
+    - run:
+        name: Yarn install
+        command: yarn install --frozen-lockfile
+    - save_cache:
+        key: cache-{{ arch }}-{{ .Branch }}-{{ checksum "package.json" }}
+        paths:
+        - ~/.cache
+    - run:
+        command: npm test
+    - run:
+        command: npm run semantic-release
 workflows:
   build:
     jobs:
-      - cypress/install:
-          executor: cypress/base-10
-          yarn: true
-          post-steps:
-            - run: npm test
-            - run: npm run semantic-release
+    - test
+  version: 2

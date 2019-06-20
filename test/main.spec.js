@@ -97,8 +97,6 @@ it('lint bad json complex 1', async () => {
     fix: true,
   })
 
-  // console.log(await getFormatted(filename))
-  console.log(result.output)
   expect(result.output).toBe(await getFormatted(filename))
 })
 

@@ -1,31 +1,36 @@
 {
   "name": "@cypress/eslint-plugin-json",
   "version": "0.0.0-development",
-  "description": "format josn",
+  "description": "autofix json",
   "keywords": [
     "eslint",
-    "eslintplugin",
-    "eslint-plugin"
+    "eslint-plugin",
+    "eslintplugin"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cypress-io/eslint-plugin-json.git"
+  },
+  "license": "MIT",
   "author": "bkucera",
   "main": "lib/index.js",
   "scripts": {
-    "test": "jest",
-    "semantic-release": "semantic-release"
+    "lint": "eslint --ext .ts,.js,.json,.eslintrc . --fix",
+    "semantic-release": "semantic-release",
+    "test": "jest"
   },
   "dependencies": {
-    "@aitodotai/json-stringify-pretty-compact": "^1.3.0",
+    "debug": "^4.1.1",
     "diff": "^4.0.1",
     "line-column": "^1.0.2",
     "lodash": "^4.17.11",
-    "sort-package-json": "^1.22.1",
-    "debug": "^4.1.1"
+    "sort-package-json": "^1.22.1"
   },
   "devDependencies": {
-    "eslint-plugin-cypress-dev": "^3.0.0",
     "@types/fs-extra": "^7.0.0",
     "@types/jest": "^24.0.15",
     "eslint": "^5.16.0",
+    "eslint-plugin-cypress-dev": "^3.0.0",
     "fs-extra": "^8.0.1",
     "jest": "^24.8.0",
     "jest-cli": "^24.8.0",
@@ -33,10 +38,5 @@
   },
   "engines": {
     "node": ">=0.10.0"
-  },
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/cypress-io/eslint-plugin-json.git"
   }
 }

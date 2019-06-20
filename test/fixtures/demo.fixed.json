@@ -1,1 +1,4 @@
-{"one": "foo", "two": "bar"}
+{
+  "one": "foo",
+  "two": "bar"
+}

@@ -1,0 +1,11 @@
+version: 2.1
+orbs:
+  cypress: cypress-io/cypress@1
+workflows:
+  build:
+    jobs:
+      - cypress/install:
+          executor: cypress/base-12
+          post-steps:
+            - run: npm test
+            - run: npm run semantic-release

@@ -45,7 +45,7 @@ eslint --ext .js,.json,.eslintrc,.babelrc --fix .
 > Note: **In order to lint hidden files** (e.g. `.eslintrc`, `.bashrc`), you'll need to modify/create a `.eslintignore` in your project root with these contents:
 `.eslintignore`:
 ```gitignore
-// eslint ignores hidden files by default
+# eslint ignores hidden files by default
 !.*
 ```
 

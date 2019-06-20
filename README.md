@@ -36,6 +36,12 @@ Add `@cypress/json` to the plugins section of your `.eslintrc` configuration fil
 }
 ```
 
+**cli example**:
+```sh
+# lint entire poject for js and various json files
+eslint --ext .js,.json,.eslintrc,.babelrc --fix .
+```
+
 ## Configuration
 
 **default configuration** (`.eslintrc`):
@@ -58,7 +64,7 @@ to turn off `sort-package-json` for example, in your `.eslintrc`:
 }
 ```
 
-**In order to lint hidden files** (`.eslintrc`, `.bashrc`, `.npmrc`), you'll need to modify/create a `.eslintignore` in your project root with these contents:
+**In order to lint hidden files** (e.g. `.eslintrc`, `.bashrc`), you'll need to modify/create a `.eslintignore` in your project root with these contents:
 
 `.eslintignore`:
 ```gitignore

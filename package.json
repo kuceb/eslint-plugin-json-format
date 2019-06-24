@@ -37,6 +37,9 @@
     "jest-cli": "^24.8.0",
     "semantic-release": "^15.13.16"
   },
+  "peerDependencies": {
+    "eslint": ">= 3.2.1 < 6"
+  },
   "engines": {
     "node": ">=0.10.0"
   }

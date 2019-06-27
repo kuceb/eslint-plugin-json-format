@@ -139,8 +139,10 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
-"@cypress/eslint-plugin-dev@../cypress-eslint-plugin-dev":
-  version "0.0.0-development"
+"@cypress/eslint-plugin-dev@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@cypress/eslint-plugin-dev/-/eslint-plugin-dev-1.0.0.tgz#d1df4e21163e7092a3aea9d77de499b82d111b6b"
+  integrity sha512-fOefTqcw3nEchb0t6CoPZzPfddsiGciHxFAAAL0MvXe/Dt3Ibg/xLvGAzMJwmsAhGOSjwOJ1nQcHjqythBMbjQ==
   dependencies:
     eslint-rule-composer "^0.3.0"
 

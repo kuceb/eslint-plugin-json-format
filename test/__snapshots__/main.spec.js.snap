@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`errors bad settings json-with-comments-filenames 1`] = `
+exports[`main spec errors bad settings json-with-comments-filenames 1`] = `
 "Eslint Settings Error: [json]:
   Using deprecated settings key: \\"json/json-with-comments-filenames\\"
   Please rename this settings key to: \\"json/json-with-comments-files\\""

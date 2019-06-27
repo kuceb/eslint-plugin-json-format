@@ -1,21 +1,19 @@
 {
-    "extends": [
-        "plugin:cypress-dev/general"
-    ],
-    "parserOptions": {
-        "sourceType": "module",
-        "ecmaVersion": 2018
-    },
-    "env": {
-        "node": true
-    },
-    "rules": {
-        "prefer-rest-params": "off",
-        "no-multiple-empty-lines": [
-            "error",
-            {
-                "max": 1
-            }
-        ]
-    }
+  "plugins": [
+    "sort-requires",
+    "@cypress/dev"
+  ],
+  "extends": [
+    "plugin:@cypress/dev/general"
+  ],
+  "rules": {
+    "sort-requires/sort-requires": 2,
+    "prefer-rest-params": "off",
+    "no-multiple-empty-lines": [
+      "error",
+      {
+        "max": 1
+      }
+    ]
+  }
 }

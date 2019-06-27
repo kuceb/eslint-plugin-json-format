@@ -15,17 +15,15 @@ Lint and autofix your `json` with `eslint`
 
 You'll first need to install [ESLint](http://eslint.org):
 
-```
-$ npm i eslint --save-dev
+```sh
+npm i eslint --save-dev
 ```
 
 Next, install `@cypress/eslint-plugin-json`:
 
+```sh
+npm install @cypress/eslint-plugin-json --save-dev
 ```
-$ npm install @cypress/eslint-plugin-json --save-dev
-```
-
-**Note:** If you installed ESLint globally (using the `-g` flag) then you must also install `@cypress/eslint-plugin-json` globally.
 
 ## Usage
 
@@ -106,6 +104,7 @@ In order for editor integration via the [`vscode-eslint`](https://github.com/mic
     },
 ```
 
+> to auto-format `json-with-comments-files`, also add `"language": "jsonc"`
 
 ## License
 [MIT](/LICENSE.md)

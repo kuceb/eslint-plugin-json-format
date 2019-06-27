@@ -8,7 +8,8 @@ Lint and autofix your `json` with `eslint`
 
 - lint and auto-fix `json` files (files ending with `.json` or `rc`)
 - auto-sort `package.json` files (default `true`, can be disabled)
-- leaves configured `json-with-comments` files alone (default `[.tsconfig.json]`, can be configured)
+- ignores `json-with-comments` files (default `[".tsconfig.json"]`)
+- ignores certain files by default (default `["package-lock.json"]`)
 
 ## Installation
 
@@ -53,13 +54,16 @@ eslint --ext .js,.json,.eslintrc,.babelrc --fix .
 
 ## Configuration
 
-**default configuration** (`.eslintrc`):
+### default configuration** (`.eslintrc`):
 ```json
 "settings": {
   "json/sort-package-json": true,
-  "json/json-with-comments-filenames": ["tsconfig.json"]
+  "json/json-with-comments-files": ["tsconfig.json"],
+  "json/ignore-files": ["package-lock.json"],
 }
 ```
+
+### examples:
 
 to turn off `sort-package-json` for example, in your `.eslintrc`:
 ```json
@@ -69,6 +73,18 @@ to turn off `sort-package-json` for example, in your `.eslintrc`:
   ],
   "settings": {
     "json/sort-package-json": false,
+  }
+}
+```
+
+to format `tsconfig.json` (this will strip comments!), in your `.eslintrc`:
+```json
+{
+  "plugins": [
+    "@cypress/json"
+  ],
+  "settings": {
+    "json/json-with-comments-files": [],
   }
 }
 ```

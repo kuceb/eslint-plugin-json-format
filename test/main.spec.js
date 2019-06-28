@@ -3,6 +3,7 @@ const CLIEngine = require('eslint').CLIEngine
 const fs = require('fs-extra')
 const path = require('path')
 const { formatJSON, parseJSON, sortPkgJSON } = require('../lib/utils')
+const { stripIndent } = require('common-tags')
 let plugin = require('..')
 
 const getFormatted = async (filename) => {
@@ -73,27 +74,11 @@ describe('main spec', () => {
       fix: true,
     })
 
-    expect(result).toEqual({
+    expect(result).toMatchObject({
       filePath: path.join(__dirname, filename),
       errorCount: 1,
       fixableErrorCount: 0,
       fixableWarningCount: 0,
-      messages: [
-        {
-          column: '3',
-          fatal: true,
-          line: '3',
-          message: 'invalid character \'\\"\'',
-          ruleId: null,
-          severity: 2,
-        },
-      ],
-      source: `{
-  "foo":1
-  "bar": 2
-}
-
-`,
       warningCount: 0,
     })
   })
@@ -105,6 +90,20 @@ describe('main spec', () => {
     })
 
     expect(result.output).toBe(await getFormatted(filename))
+  })
+
+  it('lint bad json missing commas', async () => {
+    const filename = './fixtures/demo.missing-commas.json'
+    const result = execute(filename, {
+      fix: true,
+    })
+
+    expect(result.output).toBe(`${stripIndent`
+    {
+      "foo": 1,
+      "bar": "two",
+      "baz": "three"
+    }`}\n`)
   })
 
   it('lint bad json complex 1', async () => {

@@ -6,17 +6,8 @@
   "extends": [
     "plugin:@cypress/dev/general"
   ],
-  "env": {
-    "node": true
-  },
   "rules": {
     "sort-requires/sort-requires": 2,
-    "prefer-rest-params": "off",
-    "no-multiple-empty-lines": [
-      "error",
-      {
-        "max": 1
-      }
-    ]
+    "prefer-rest-params": "off"
   }
 }

@@ -6,6 +6,9 @@
   "extends": [
     "plugin:@cypress/dev/general"
   ],
+  "env": {
+    "node": true
+  },
   "rules": {
     "sort-requires/sort-requires": 2,
     "prefer-rest-params": "off"

@@ -146,8 +146,10 @@
   dependencies:
     eslint-rule-composer "^0.3.0"
 
-"@cypress/eslint-plugin-json@./":
-  version "0.0.0-development"
+"@cypress/eslint-plugin-json@^3.0.1":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@cypress/eslint-plugin-json/-/eslint-plugin-json-3.0.1.tgz#268562400cf2eee7ec85822dafd22ef310b99bab"
+  integrity sha512-EFyLw4wmzx8xjL0IoNW8eBEyNAbMsf2AwGBMDomAvn0sD0D3MpFMaPQ7psOzxCZ5vH5s2sIXVZiBAuZn2Ep8uQ==
   dependencies:
     common-tags "^1.8.0"
     debug "^4.1.1"

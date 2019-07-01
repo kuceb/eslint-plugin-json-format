@@ -221,6 +221,29 @@ describe('main spec', () => {
       expect(result.warningCount).toBe(1)
       expect(result.messages[0].message).toContain('ignore-files')
     })
+
+    it('allows pathnames for filenames settings', () => {
+      const filename = './fixtures/ignore-this-file.json'
+      const result = execute(filename, {
+        fix: true,
+        settings: { 'json/ignore-files': ['fixtures/ignore-this-file.json'] },
+      })
+
+      expect(result.warningCount).toBe(1)
+      expect(result.messages[0].message).toContain('ignore-files')
+    })
+
+    it('allows pathnames for filenames settings in win32', () => {
+      const filename = './fixtures/ignore-this-file.json'
+
+      const result = execute(filename, {
+        fix: true,
+        settings: { 'json/ignore-files': [path.win32.join('fixtures/ignore-this-file.json')] },
+      })
+
+      expect(result.warningCount).toBe(1)
+      expect(result.messages[0].message).toContain('ignore-files')
+    })
   })
 
   it('lint bad js', () => {

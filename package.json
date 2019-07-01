@@ -6,7 +6,8 @@
     "lint": "eslint --ext .ts,.js,.json,.eslintrc .",
     "lint-fix": "yarn lint --fix",
     "semantic-release": "semantic-release",
-    "test": "jest"
+    "test": "jest",
+    "test-watch": "DEBUG='json*' DEBUG_DEPTH=10 yarn jest --watch"
   },
   "dependencies": {
     "common-tags": "^1.8.0",
@@ -18,8 +19,8 @@
     "sort-package-json": "^1.22.1"
   },
   "devDependencies": {
-    "@cypress/eslint-plugin-dev": "^1.0.0",
-    "@cypress/eslint-plugin-json": "^3.0.1",
+    "@cypress/eslint-plugin-dev": "^1.1.0",
+    "@cypress/eslint-plugin-json": "^3.0.3",
     "@types/fs-extra": "^7.0.0",
     "@types/jest": "^24.0.15",
     "@typescript-eslint/eslint-plugin": "^1.11.0",
@@ -32,6 +33,9 @@
     "jest-cli": "^24.8.0",
     "semantic-release": "^15.13.16",
     "typescript": "^3.5.2"
+  },
+  "peerDependencies": {
+    "eslint": ">= 3.2.1 < 6"
   },
   "description": "lint and autofix json",
   "license": "MIT",
@@ -47,8 +51,5 @@
     "eslint",
     "eslint-plugin",
     "eslintplugin"
-  ],
-  "peerDependencies": {
-    "eslint": ">= 3.2.1 < 6"
-  }
+  ]
 }

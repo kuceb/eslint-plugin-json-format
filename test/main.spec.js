@@ -46,6 +46,9 @@ function execute (file, baseConfig) {
 }
 
 describe('main spec', () => {
+  beforeEach(() => {
+    process.cwd = jest.fn().mockReturnValue(path.join(__dirname, 'fixtures'))
+  })
 
   it('lint bad json', async () => {
     const filename = './fixtures/demo.json'
@@ -193,14 +196,23 @@ describe('main spec', () => {
     })
 
     it('ignores json-with-comments-files (for now)', async () => {
-      const filename = './fixtures/demo.json'
-      const result = execute(filename, {
+      let filename = './fixtures/demo.json'
+      let result = execute(filename, {
         fix: true,
         settings: { 'json/json-with-comments-files': ['demo.json'] },
       })
 
       expect(result.warningCount).toBe(1)
       expect(result.messages[0].message).toContain('json-with-comments-files')
+
+      filename = './fixtures/.vscode/settings.json'
+      result = execute(filename, {
+        fix: true,
+      })
+
+      expect(result.warningCount).toBe(1)
+      expect(result.messages[0].message).toContain('json-with-comments-files')
+      expect(result.messages[0].message).toMatchSnapshot()
     })
 
     it('ignores ignore-files', () => {
@@ -226,7 +238,7 @@ describe('main spec', () => {
       const filename = './fixtures/ignore-this-file.json'
       const result = execute(filename, {
         fix: true,
-        settings: { 'json/ignore-files': ['fixtures/ignore-this-file.json'] },
+        settings: { 'json/ignore-files': ['ignore-this-file.json'] },
       })
 
       expect(result.warningCount).toBe(1)
@@ -238,7 +250,7 @@ describe('main spec', () => {
 
       const result = execute(filename, {
         fix: true,
-        settings: { 'json/ignore-files': [path.win32.join('fixtures/ignore-this-file.json')] },
+        settings: { 'json/ignore-files': ['ignore-this-file.json'] },
       })
 
       expect(result.warningCount).toBe(1)

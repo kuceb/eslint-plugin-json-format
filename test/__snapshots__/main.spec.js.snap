@@ -1,5 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`main spec configuration ignores json-with-comments-files (for now) 1`] = `
+"[@cypress/eslint-plugin-json]: Skipping file due to \\"json/json-with-comments-files\\" setting: 
+  [\\"**/tsconfig.json\\", \\".vscode/**\\"]
+To remove this warning add \\".vscode/settings.json\\" to your \`.eslintignore\` file"
+`;
+
 exports[`main spec errors bad settings json-with-comments-filenames 1`] = `
 "Eslint Settings Error: [json]:
   Using deprecated settings key: \\"json/json-with-comments-filenames\\"

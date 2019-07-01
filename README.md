@@ -8,8 +8,8 @@ Lint and autofix your `json` with `eslint`
 
 - lint and auto-fix `json` files (files ending with `.json` or `rc`)
 - auto-sort `package.json` files (default `true`, can be disabled)
-- ignores `json-with-comments` files (default `[".tsconfig.json"]`)
-- ignores certain files by default (default `["package-lock.json"]`)
+- ignores `json-with-comments` files (default `["**/.tsconfig.json", ".vscode/**"]`)
+- ignores certain files by default (default `["**/package-lock.json"]`)
 
 ## Installation
 
@@ -56,10 +56,11 @@ eslint --ext .js,.json,.eslintrc,.babelrc --fix .
 ```json
 "settings": {
   "json/sort-package-json": true,
-  "json/json-with-comments-files": ["tsconfig.json"],
-  "json/ignore-files": ["package-lock.json"],
+  "json/ignore-files": ["**/package-lock.json"],
+  "json/json-with-comments-files": ["**/tsconfig.json", ".vscode/**"],
 }
 ```
+> Note: glob patterns use [`minimatch`](https://github.com/isaacs/minimatch/) against pathnames relative to the project root (cwd)
 
 ### examples:
 

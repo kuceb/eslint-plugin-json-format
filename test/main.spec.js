@@ -2,9 +2,12 @@ const _ = require('lodash')
 const CLIEngine = require('eslint').CLIEngine
 const fs = require('fs-extra')
 const path = require('path')
+const settings = require('../lib/settings')
 const { formatJSON, parseJSON, sortPkgJSON } = require('../lib/utils')
 const { stripIndent } = require('common-tags')
 let plugin = require('..')
+
+const defaultSettings = _.mapValues(settings.schema, (v) => v.default)
 
 const getFormatted = async (filename) => {
   return formatJSON(
@@ -13,7 +16,7 @@ const getFormatted = async (filename) => {
 }
 
 const getFormattedAndSorted = async (filename) => {
-  return formatJSON(sortPkgJSON(parseJSON(await getFormatted(filename))))
+  return formatJSON(sortPkgJSON(parseJSON(await getFormatted(filename)), defaultSettings['package-json-sort-order']))
 }
 
 function execute (file, baseConfig) {
@@ -255,6 +258,16 @@ describe('main spec', () => {
 
       expect(result.warningCount).toBe(1)
       expect(result.messages[0].message).toContain('ignore-files')
+    })
+
+    it('package.json sort order', async () => {
+      const filename = './fixtures/sort-order/__package.json'
+      const result = execute(filename, {
+        fix: true,
+        settings: { 'json/package-json-sort-order': ['foo', 'bar'] },
+      })
+
+      expectOrder(_.keys(parseJSON(result.output)), ['foo', 'bar'])
     })
   })
 

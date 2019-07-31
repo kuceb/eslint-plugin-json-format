@@ -20,7 +20,7 @@
     "diff": "^4.0.1",
     "json5": "^2.1.0",
     "line-column": "^1.0.2",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.15",
     "minimatch": "^3.0.4",
     "sort-package-json": "^1.22.1"
   },

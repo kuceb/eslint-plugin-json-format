@@ -20,6 +20,9 @@ jobs:
     - run:
         command: yarn test
     - run:
+        # test with eslint@6.1.0
+        command: yarn add -D eslint@6.1.0 && yarn run test
+    - run:
         command: yarn run semantic-release
 workflows:
   build:

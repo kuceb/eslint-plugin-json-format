@@ -1,7 +1,7 @@
 {
   "name": "eslint-plugin-json-format",
   "version": "0.0.0-development",
-  "description": "lint and autofix json",
+  "description": "lint and auto-fix json",
   "main": "lib/index.js",
   "scripts": {
     "lint": "eslint --ext .ts,.js,.json,.eslintrc .",

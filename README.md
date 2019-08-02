@@ -1,8 +1,8 @@
-# @cypress/eslint-plugin-json
+# eslint-plugin-json-format
 
-[![CircleCI](https://circleci.com/gh/cypress-io/eslint-plugin-json.svg?style=svg)](https://circleci.com/gh/cypress-io/eslint-plugin-json)
+[![CircleCI](https://circleci.com/gh/bkucera/eslint-plugin-json-format.svg?style=svg)](https://circleci.com/gh/bkucera/eslint-plugin-json-format)
 
-Lint and autofix your `json` with `eslint`
+Lint and auto-fix your `json` with `eslint`
 
 ## Features
 
@@ -19,20 +19,20 @@ You'll first need to install [ESLint](http://eslint.org):
 npm i eslint --save-dev
 ```
 
-Next, install `@cypress/eslint-plugin-json`:
+Next, install `eslint-plugin-json-format`:
 
 ```sh
-npm install @cypress/eslint-plugin-json --save-dev
+npm install eslint-plugin-json-format --save-dev
 ```
 
 ## Usage
 
-Add `@cypress/json` to the plugins section of your `.eslintrc` configuration file. You can omit the `eslint-plugin-` prefix:
+Add `json-format` to the plugins section of your `.eslintrc` configuration file. You can omit the `eslint-plugin-` prefix:
 
 ```json
 {
   "plugins": [
-    "@cypress/json"
+    "json-format"
   ]
 }
 ```
@@ -92,7 +92,7 @@ to turn off `sort-package-json` for example, in your `.eslintrc`:
 ```json
 {
   "plugins": [
-    "@cypress/json"
+    "json-format"
   ],
   "settings": {
     "json/sort-package-json": false,
@@ -104,7 +104,7 @@ to format `tsconfig.json` (this will strip comments!), in your `.eslintrc`:
 ```json
 {
   "plugins": [
-    "@cypress/json"
+    "json-format"
   ],
   "settings": {
     "json/json-with-comments-files": [],
@@ -116,7 +116,7 @@ change the sort order of `package.json`:
 ```json
 {
   "plugins": [
-    "@cypress/json"
+    "json-format"
   ],
   "settings": {
     "json/package-json-sort-order": ["license", "dependencies"],

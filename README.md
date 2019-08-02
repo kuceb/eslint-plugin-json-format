@@ -5,10 +5,8 @@
     <a href="https://www.npmjs.com/package/eslint-plugin-json-format"><img src="https://img.shields.io/npm/v/eslint-plugin-json-format.svg?style=flat"></a>
     <a href="https://www.npmjs.com/package/eslint-plugin-json-format"><img src="https://img.shields.io/npm/dm/eslint-plugin-json-format.svg"></a>
     <a href="https://github.com/bkucera/eslint-plugin-json-format/blob/master/LICENSE"><img src="https://img.shields.io/github/license/bkucera/eslint-plugin-json-format.svg"></a>
-    
-
-
 </div>
+
 Lint and auto-fix your `json` with `eslint`
 
 ## Features

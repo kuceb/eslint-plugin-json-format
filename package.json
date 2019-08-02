@@ -1,6 +1,7 @@
 {
   "name": "eslint-plugin-json-format",
-  "version": "1.0.0",
+  "version": "0.0.0-development",
+  "description": "lint and autofix json",
   "main": "lib/index.js",
   "scripts": {
     "lint": "eslint --ext .ts,.js,.json,.eslintrc .",
@@ -45,16 +46,15 @@
   "peerDependencies": {
     "eslint": ">= 3.2.1"
   },
-  "description": "lint and autofix json",
-  "license": "MIT",
-  "author": "bkucera",
   "engines": {
     "node": ">=0.10.0"
   },
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/bkucera/eslint-plugin-json-format.git"
   },
+  "author": "bkucera",
   "keywords": [
     "eslint",
     "eslint-plugin",

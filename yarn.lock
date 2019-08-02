@@ -150,17 +150,18 @@
     lodash "^4.17.11"
     shelljs "^0.8.3"
 
-"@cypress/eslint-plugin-json@^3.0.3":
-  version "3.0.3"
-  resolved "https://registry.yarnpkg.com/@cypress/eslint-plugin-json/-/eslint-plugin-json-3.0.3.tgz#237572cb7c4b0cd08e64782458e6d8cffa0b2276"
-  integrity sha512-mQXLMDB1V6s0G2Q8MFZnDd71vsn8yMe8wQN7qhX6bqQngR7hdFxpdTFithkgpwkvHxK2mDqMXnx18yFNFqqvOA==
+"@cypress/eslint-plugin-json@^3.2.3":
+  version "3.2.3"
+  resolved "https://registry.yarnpkg.com/@cypress/eslint-plugin-json/-/eslint-plugin-json-3.2.3.tgz#c07e20f7a2520a9bcc78f22067bc2ec7df1499be"
+  integrity sha512-dvMnyRYHbr0pu/c1Q1eOpDRuShJKy+jnsqbHKlPqMpcu9jDY7mg67CXl6LmT1tnKu4zS2/bnYfZt9QOE62UeHQ==
   dependencies:
     common-tags "^1.8.0"
     debug "^4.1.1"
     diff "^4.0.1"
     json5 "^2.1.0"
     line-column "^1.0.2"
-    lodash "^4.17.11"
+    lodash "^4.17.15"
+    minimatch "^3.0.4"
     sort-package-json "^1.22.1"
 
 "@jest/console@^24.7.1":

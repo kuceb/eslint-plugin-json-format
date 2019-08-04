@@ -7,11 +7,11 @@
     <a href="https://github.com/bkucera/eslint-plugin-json-format/blob/master/LICENSE"><img src="https://img.shields.io/github/license/bkucera/eslint-plugin-json-format.svg"></a>
 </div>
 
-Lint and auto-fix your `json` with `eslint`
+Lint, format, and auto-fix your `json` with `eslint`
 
 ## Features
 
-- lint and auto-fix `json` files (files ending with `.json` or `rc`)
+- lint, format, and auto-fix `json` files (files ending with `.json` or `rc`)
 - auto-sort `package.json` files (default `true`, can be disabled and sorting configured)
 - ignores `json-with-comments` files (default `["**/.tsconfig.json", ".vscode/**"]`)
 - ignores certain files by default (default `["**/package-lock.json"]`)
@@ -55,43 +55,33 @@ eslint --ext .js,.json,.eslintrc,.babelrc --fix .
 !.*
 ```
 
-## Configuration
+## Settings
 
-### default configuration** (`.eslintrc`):
+### default settings (`.eslintrc`):
 ```json
 "settings": {
   "json/sort-package-json": true,
   "json/ignore-files": ["**/package-lock.json"],
   "json/json-with-comments-files": ["**/tsconfig.json", ".vscode/**"],
-  "json/package-json-sort-order": [
-      "name",
-      "version",
-      "description",
-      "private",
-      "main",
-      "browser",
-      "scripts",
-      "husky",
-      "dependencies",
-      "devDependencies",
-      "peerDependencies",
-      "files",
-      "bin",
-      "engines",
-      "types",
-      "typings",
-      "productName",
-      "license",
-      "repository",
-      "homepage",
-      "author",
-      "bugs",
-    ]
+  "json/package-json-sort-order": "pro"
 }
 ```
 > Note: glob patterns use [`minimatch`](https://github.com/isaacs/minimatch/) against pathnames relative to the project root (cwd)
 
-### examples:
+### `package-json-sort-order`
+You can configure the exact sort order of your `package.json` files (or turn it off entirely with the `sort-package-json` setting)
+
+By default the sort order is `"pro"` (will change to "standard" in next major version)
+
+#### Available sorting options
+
+**"pro"**: places scripts and depenedencies at the top, reducing need to scroll down to view them. Pros only.
+
+**"standard"**: default from [`sort-package-json`](https://github.com/keithamus/sort-package-json). This is a sane, standard order.
+
+**["your", "custom", "order", "here"]**: provide an array to manually set the sort order.
+
+### Settings examples
 
 to turn off `sort-package-json` for example, in your `.eslintrc`:
 ```json

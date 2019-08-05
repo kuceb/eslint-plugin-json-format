@@ -1,4 +1,5 @@
 <div align="center">
+    <img src="docs/logo.svg">
     <h1>eslint-plugin-json-format</h1>
     <a href="https://circleci.com/gh/Bkucera/eslint-plugin-json-format"><img alt="CircleCI" src="https://img.shields.io/circleci/build/gh/Bkucera/eslint-plugin-json-format"></a>
     <br>
@@ -21,7 +22,7 @@ Lint, format, and auto-fix your `json` with `eslint`
 You'll first need to install [ESLint](http://eslint.org):
 
 ```sh
-npm i eslint --save-dev
+npm install eslint --save-dev
 ```
 
 Next, install `eslint-plugin-json-format`:
@@ -48,11 +49,12 @@ Add `json-format` to the plugins section of your `.eslintrc` configuration file.
 eslint --ext .js,.json,.eslintrc,.babelrc --fix .
 ```
 
-> Note: **In order to lint hidden files** (e.g. `.eslintrc`, `.babelrc`), you'll need to modify/create a `.eslintignore` in your project root with these contents:
+> Note: **In order to lint hidden files** (e.g. `.eslintrc`), you'll need to modify/create a `.eslintignore` in your project root with these contents:
 `.eslintignore`:
 ```gitignore
 # eslint ignores hidden files by default
 !.*
+**/node_modules
 ```
 
 ## Settings
@@ -60,20 +62,19 @@ eslint --ext .js,.json,.eslintrc,.babelrc --fix .
 ### default settings (`.eslintrc`):
 ```json
 "settings": {
-  "json/sort-package-json": true,
+  "json/sort-package-json": "standard",
   "json/ignore-files": ["**/package-lock.json"],
   "json/json-with-comments-files": ["**/tsconfig.json", ".vscode/**"],
-  "json/package-json-sort-order": "standard"
 }
 ```
-> Note: glob patterns use [`minimatch`](https://github.com/isaacs/minimatch/) against pathnames relative to the project root (cwd)
+> Note: glob patterns use [`minimatch`](https://github.com/isaacs/minimatch/) against path names relative to the project root (cwd)
 
-### `package-json-sort-order`
-You can configure the exact sort order of your `package.json` files (or turn it off entirely with the `sort-package-json` setting)
-
-> By default the sort order is `"standard"`
+### `sort-package-json` order
+You can configure the exact sort order of your `package.json` files (or turn it off entirely with `false`)
 
 #### Available sorting options
+
+**false**: disable `package.json` sorting.
 
 **"standard"**: default from [`sort-package-json`](https://github.com/keithamus/sort-package-json). This is a sane, standard order.
 
@@ -83,7 +84,7 @@ You can configure the exact sort order of your `package.json` files (or turn it 
 
 ### Settings examples
 
-to turn off `sort-package-json` for example, in your `.eslintrc`:
+to turn off sorting `package.json` files for example, in your `.eslintrc`:
 ```json
 {
   "plugins": [
@@ -136,7 +137,7 @@ In order for editor integration via the [`vscode-eslint`](https://github.com/mic
     },
 ```
 
-> to auto-format `json-with-comments-files`, also add `"language": "jsonc"`
+> to auto-format* `json-with-comments-files`, also add `"language": "jsonc"` (* will strip comments)
 
 ## License
 [MIT](/LICENSE.md)

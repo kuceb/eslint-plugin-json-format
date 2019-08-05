@@ -14,7 +14,7 @@ const getFormatted = async (filename) => {
 }
 
 const getFormattedAndSorted = async (filename) => {
-  return formatJSON(sortPkgJSON(parseJSON(await getFormatted(filename)), settings.getDefault('package-json-sort-order')))
+  return formatJSON(sortPkgJSON(parseJSON(await getFormatted(filename)), settings.getDefault('sort-package-json')))
 }
 
 function execute (file, baseConfig) {
@@ -208,15 +208,20 @@ describe('main spec', () => {
 
     // starts out of order
     expectOrder(_.keys(JSON.parse(await getFormatted(filename))), [
-      'license',
-      'dependencies',
+      'keywords',
+      'version',
     ])
 
     expect(result.output).toBe(await getFormattedAndSorted(filename))
     const resultOrder = _.keys(JSON.parse(result.output))
 
     // ends up in order
-    expectOrder(resultOrder, ['dependencies', 'license'])
+    expectOrder(resultOrder, [
+      'version',
+      'keywords',
+      'license',
+      'dependencies',
+    ])
   })
 
   describe('configuration', () => {
@@ -298,7 +303,7 @@ describe('main spec', () => {
       const filename = './fixtures/sort-order/__package.json'
       const { result } = execute(filename, {
         fix: true,
-        settings: { 'json/package-json-sort-order': ['foo', 'bar'] },
+        settings: { 'json/sort-package-json': ['foo', 'bar'] },
       })
 
       expectOrder(_.keys(parseJSON(result.output)), ['foo', 'bar'])
@@ -309,7 +314,7 @@ describe('main spec', () => {
       const { result } = execute(filename, {
         fix: true,
         // standard order is default from sort-package-json package
-        settings: { 'json/package-json-sort-order': 'standard' },
+        settings: { 'json/sort-package-json': 'pro' },
       })
 
       // starts out of order
@@ -322,7 +327,11 @@ describe('main spec', () => {
       const resultOrder = _.keys(JSON.parse(result.output))
 
       // ends up in order
-      expectOrder(resultOrder, ['license', 'dependencies'])
+      expectOrder(resultOrder, [
+        'dependencies',
+        'license',
+      ])
+
     })
 
   })
@@ -424,11 +433,22 @@ describe('main spec', () => {
     })
 
     describe('bad settings', () => {
-      it('json-with-comments-filenames', async () => {
+      it('@deprecate json-with-comments-filenames', async () => {
         const filename = './fixtures/demo.json'
         const { result } = execute(filename, {
           fix: true,
           settings: { 'json/json-with-comments-filenames': ['demo.json'] },
+        })
+
+        expect(result.warningCount).toBe(1)
+        expect(result.messages[0].message).toMatchSnapshot()
+      })
+
+      it('@deprecate package-json-sort-order', async () => {
+        const filename = './fixtures/sort-order/__package.json'
+        const { result } = execute(filename, {
+          fix: true,
+          settings: { 'json/package-json-sort-order': ['foo', 'bar'] },
         })
 
         expect(result.warningCount).toBe(1)

@@ -63,7 +63,7 @@ eslint --ext .js,.json,.eslintrc,.babelrc --fix .
   "json/sort-package-json": true,
   "json/ignore-files": ["**/package-lock.json"],
   "json/json-with-comments-files": ["**/tsconfig.json", ".vscode/**"],
-  "json/package-json-sort-order": "pro"
+  "json/package-json-sort-order": "standard"
 }
 ```
 > Note: glob patterns use [`minimatch`](https://github.com/isaacs/minimatch/) against pathnames relative to the project root (cwd)
@@ -71,13 +71,13 @@ eslint --ext .js,.json,.eslintrc,.babelrc --fix .
 ### `package-json-sort-order`
 You can configure the exact sort order of your `package.json` files (or turn it off entirely with the `sort-package-json` setting)
 
-By default the sort order is `"pro"` (will change to "standard" in next major version)
+> By default the sort order is `"standard"`
 
 #### Available sorting options
 
-**"pro"**: places scripts and depenedencies at the top, reducing need to scroll down to view them. Pros only.
-
 **"standard"**: default from [`sort-package-json`](https://github.com/keithamus/sort-package-json). This is a sane, standard order.
+
+**"pro"**: places scripts and dependencies at the top, reducing need to scroll down to view them. Pros only.
 
 **["your", "custom", "order", "here"]**: provide an array to manually set the sort order.
 

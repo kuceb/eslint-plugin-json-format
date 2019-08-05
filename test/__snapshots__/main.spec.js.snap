@@ -6,8 +6,14 @@ exports[`main spec configuration ignores json-with-comments-files (for now) 1`] 
 To remove this warning add \\".vscode/settings.json\\" to your \`.eslintignore\` file"
 `;
 
-exports[`main spec errors bad settings json-with-comments-filenames 1`] = `
+exports[`main spec errors bad settings @deprecate json-with-comments-filenames 1`] = `
 "Eslint Settings Error: [json]:
   Using deprecated settings key: \\"json/json-with-comments-filenames\\"
   Please rename this settings key to: \\"json/json-with-comments-files\\""
+`;
+
+exports[`main spec errors bad settings @deprecate package-json-sort-order 1`] = `
+"Eslint Settings Error: [json]:
+  Using deprecated settings key: \\"json/package-json-sort-order\\"
+  Please rename this settings key to: \\"json/sort-package-json\\""
 `;

@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="docs/logo.svg">
+    <img width="150" height="150" src="docs/logo.svg">
     <h1>eslint-plugin-json-format</h1>
     <a href="https://circleci.com/gh/Bkucera/eslint-plugin-json-format"><img alt="CircleCI" src="https://img.shields.io/circleci/build/gh/Bkucera/eslint-plugin-json-format"></a>
     <br>

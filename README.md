@@ -77,7 +77,7 @@ You can configure the exact sort order of your `package.json` files (or turn it 
 
 **"standard"**: default from [`sort-package-json`](https://github.com/keithamus/sort-package-json). This is a sane, standard order.
 
-**"pro"**: places scripts and depenedencies at the top, reducing need to scroll down to view them. Pros only.
+**"pro"**: places scripts and dependencies at the top, reducing need to scroll down to view them. Pros only.
 
 **["your", "custom", "order", "here"]**: provide an array to manually set the sort order.
 

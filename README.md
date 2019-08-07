@@ -2,7 +2,6 @@
     <img width="150" height="150" src="docs/logo.svg">
     <h1>eslint-plugin-json-format</h1>
     <a href="https://circleci.com/gh/Bkucera/eslint-plugin-json-format"><img alt="CircleCI" src="https://img.shields.io/circleci/build/gh/Bkucera/eslint-plugin-json-format"></a>
-    <br>
     <a href="https://www.npmjs.com/package/eslint-plugin-json-format"><img src="https://img.shields.io/npm/v/eslint-plugin-json-format.svg?style=flat"></a>
     <a href="https://www.npmjs.com/package/eslint-plugin-json-format"><img src="https://img.shields.io/npm/dm/eslint-plugin-json-format.svg"></a>
     <a href="https://github.com/bkucera/eslint-plugin-json-format/blob/master/LICENSE"><img src="https://img.shields.io/github/license/bkucera/eslint-plugin-json-format.svg"></a>

@@ -138,7 +138,7 @@ In order for editor integration via the [`vscode-eslint`](https://github.com/mic
  }
 ```
 
-> to auto-format* `json-with-comments-files`, also add `"language": "jsonc"` (* will strip comments)
+> to auto-format* `json-with-comments-files`, also add `"eslint.validate": ["jsonc"]` (* will strip comments)
 
 ## License
 [MIT](/LICENSE.md)

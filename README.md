@@ -125,15 +125,17 @@ change the sort order of `package.json`:
 
 In order for editor integration via the [`vscode-eslint`](https://github.com/microsoft/vscode-eslint) extension, you'll need to enable linting `json` files.
 
-`settings.json`:
-```json
-// enable eslint fix-on-save
-  "eslint.autoFixOnSave": true,
-  "eslint.validate": [
-    {
-      "language": "json",
-      "autoFix": true
+`.vscode/settings.json`:
+```jsonc
+{
+// enble eslint fix-on-save
+  "eslint.validate": ["json"],
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
     },
+  "eslint.enable": true
+ }
 ```
 
 > to auto-format* `json-with-comments-files`, also add `"language": "jsonc"` (* will strip comments)

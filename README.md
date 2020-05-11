@@ -116,7 +116,7 @@ change the sort order of `package.json`:
     "json-format"
   ],
   "settings": {
-    "json/package-json-sort-order": ["license", "dependencies"],
+    "json/sort-package-json": ["license", "dependencies"],
   }
 }
 ```

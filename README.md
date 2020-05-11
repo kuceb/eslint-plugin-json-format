@@ -128,14 +128,12 @@ In order for editor integration via the [`vscode-eslint`](https://github.com/mic
 `.vscode/settings.json`:
 ```jsonc
 {
-// enble eslint fix-on-save
-  "eslint.validate": ["json"],
+  "eslint.enable": true,
   "editor.formatOnSave": true,
-  "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": true
-    },
-  "eslint.enable": true
- }
+  // enable for eslint-plugin json-format
+  "eslint.validate": ["json"],
+}
+
 ```
 
 > to auto-format* `json-with-comments-files`, also add `"eslint.validate": ["jsonc"]` (* will strip comments)

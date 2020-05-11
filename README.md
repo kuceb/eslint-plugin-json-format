@@ -42,6 +42,8 @@ Add `json-format` to the plugins section of your `.eslintrc` configuration file.
 }
 ```
 
+Optional: setup [editor integration to format-on-save](#editor-configuration)
+
 **cli example**:
 ```sh
 # lint entire poject for js and various json files

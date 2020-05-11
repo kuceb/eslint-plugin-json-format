@@ -54,7 +54,7 @@ eslint --ext .js,.json,.eslintrc,.babelrc --fix .
 `.eslintignore`:
 ```gitignore
 # eslint ignores hidden files by default
-!.*
+!.*.json
 **/node_modules
 ```
 

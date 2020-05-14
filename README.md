@@ -140,6 +140,32 @@ In order for editor integration via the [`vscode-eslint`](https://github.com/mic
 
 > to auto-format* `json-with-comments-files`, also add `"eslint.validate": ["jsonc"]` (* will strip comments)
 
+## Related Tools
+
+- [husky](https://github.com/typicode/husky) + [lint-staged](https://github.com/okonet/lint-staged) _set up lint and auto-fix on commit_
+
+```sh
+npm i -D husky lint-staged
+```
+
+in your `package.json`:
+```json
+{
+  ...
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,json}": [
+      "eslint --fix"
+    ]
+  }
+ "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  ...
+}
+```
+
 ## License
 [MIT](/LICENSE.md)
 

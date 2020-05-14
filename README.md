@@ -156,7 +156,7 @@ in your `package.json`:
     "*.{js,jsx,ts,tsx,json}": [
       "eslint --fix"
     ]
-  }
+  },
  "husky": {
     "hooks": {
       "pre-commit": "lint-staged"

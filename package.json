@@ -40,7 +40,7 @@
     "jest": "^24.8.0",
     "jest-cli": "^24.8.0",
     "lint-staged": "^9.2.1",
-    "semantic-release": "^15.13.16",
+    "semantic-release": "^17.2.3",
     "typescript": "^3.5.2"
   },
   "peerDependencies": {
